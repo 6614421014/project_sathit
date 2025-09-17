@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  font-family: Kanit, sans-serif;
+  background-color: #111;
+  color: white;
+  padding-bottom: 70px; /* กันไม่ให้เนื้อหาโดน navbar ทับ */
+}
+
+/* ส่วนหัว */
+.header {
+  display: flex;
+  align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+  gap: 1rem; /* ระยะห่างระหว่างโลโก้กับข้อความ */
+  padding: 1rem 1.5rem; /* ระยะห่างจากขอบซ้าย-ขวา */
+}
+.header img {
+  height: 80px; /* หรือ 50px แล้วแต่ขนาดที่ต้องการ */
+  width: auto; /* รักษาอัตราส่วน */
+}
+.logo {
+  height: 100px; /* 👈 ปรับขนาดโลโก้ให้ใหญ่ขึ้น (จากเดิม 50px) */
+}
+
+.tagline {
+  font-size: 2.5rem; /* 👈 ทำให้ข้อความใหญ่ขึ้น */
+  font-weight: bold;
+  font-family: Kanit;
+  color: white;
+  margin: 0; /* ตัด margin เริ่มต้นของ <p> ทิ้ง */
+}
+
+/* Section */
+.section {
+  padding: 1rem;
+}
+
+.section h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+/* Movie Cards */
+.movie-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+.movie-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;       /* เลื่อนแนวนอนได้ */
+  overflow-y: hidden;     /* ปิดเลื่อนแนวตั้ง */
+  scroll-snap-type: x mandatory;
+  padding: 1rem;
+
+  /* ปิด scroll bar บนทุก browser */
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.movie-slider::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+.movie-card {
+  flex: 0 0 auto;
+  width: 200px; /* 👈 กำหนดความกว้างเท่ากัน */
+  height: 300px;
+  text-align: center;
+  overflow: visible; /* ป้องกันไม่ให้ตัดข้อความ */
+}
+.movie-card img {
+  width: 100%;
+  height: 220px; /* 👈 กำหนดความสูงเท่ากัน */
+  object-fit: cover; /* 👈 ตัดส่วนเกินให้เต็มบล็อก */
+  border-radius: 10px;
+  display: block;
+}
+/* System tags */
+.system-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.system-tag {
+  background: #333;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Promo cards */
+.promo-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.promo-card {
+  background: #222;
+  border-radius: 10px;
+  padding: 0.5rem;
+  flex: 1;
+  text-align: center;
+}
+
+.promo-card img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* Navbar ล่าง */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  border-top: 1px solid #333;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.nav-item .icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.nav-item:hover {
+  color: #ff4444;
+}
+
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.format-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.format-card {
+  background-color: #333;
+  color: white;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; /* ระยะห่างระหว่างข้อความกับรูป */
+}
+
+.format-card img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
