@@ -21,6 +21,49 @@ body {
   height: 100px; /* 👈 ปรับขนาดโลโก้ให้ใหญ่ขึ้น (จากเดิม 50px) */
 }
 
+.profile-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.profile-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid rgb(229, 7, 7);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #333;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  margin-top: 10px;
+  z-index: 1000;
+}
+
+.dropdown a {
+  width: 150px;
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown a:hover {
+  background-color: #444;
+}
+
+.dropdown.show {
+  display: block;
+}
+
 .tagline {
   font-size: 2.5rem; /* 👈 ทำให้ข้อความใหญ่ขึ้น */
   font-weight: bold;
@@ -88,25 +131,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Promo cards */
-.promo-grid {
-  display: flex;
-  gap: 1rem;
-}
-
-.promo-card {
-  background: #222;
-  border-radius: 10px;
-  padding: 0.5rem;
-  flex: 1;
-  text-align: center;
-}
-
-.promo-card img {
-  max-width: 100%;
-  border-radius: 6px;
-}
-
 /* Navbar ล่าง */
 .navbar {
   position: fixed;
@@ -151,18 +175,28 @@ body {
 .format-card {
   background-color: #333;
   color: white;
+  width: 85px;
+  height: 85px;
   padding: 0.75rem 1.2rem;
   border-radius: 0.5rem;
   text-align: center;
   font-weight: bold;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem; /* ระยะห่างระหว่างข้อความกับรูป */
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .format-card img {
   width: 24px;
   height: 24px;
   object-fit: contain;
+}
+
+.format-card:hover {
+  background-color: #e32f2f;
+  transform: scale(1.02);
 }

@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CineGo</title>
   <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- ส่วนโลโก้ -->
-<header class="header">
-  <img src="images/logo.png" alt=""> 
-  <p class="tagline"> CineGo </p>
-</header>
+  <header class="header">
+    <img src="images/logo.png" alt="">
+    <p class="tagline"> CineGo </p>
+  </header>
+
+  <!-- รูปโปรไฟล์ -->
+  <div class="profile-menu">
+    <img src="images/002.jpg" alt="Profile" class="profile-pic" onclick="toggleMenu()">
+
+    <div class="dropdown" id="dropdownMenu">
+      <a href="profile.html">โปรไฟล์</a>
+      <a href="settings.html">การตั้งค่า</a>
+      <a href="#" onclick="logout()">ออกจากระบบ</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("dropdownMenu").classList.toggle("show");
+    }
+
+    function logout() {
+      alert("คุณออกจากระบบแล้ว");
+      // หรือเขียนโค้ดลบ token / redirect
+    }
+
+    // ปิดเมนูถ้าคลิกนอกเมนู
+    window.onclick = function (event) {
+      if (!event.target.matches('.profile-pic')) {
+        const dropdown = document.getElementById("dropdownMenu");
+        if (dropdown.classList.contains('show')) {
+          dropdown.classList.remove('show');
+        }
+      }
+    }
+  </script>
 
   <!-- ส่วนเนื้อหาหลัก -->
   <main class="content">
@@ -23,31 +57,42 @@
       <h2 style="font-size: 30px;">กำลังฉาย</h2>
       <div class="movie-slider">
         <div class="movie-card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iJVZ1kNYaHFGsWONqenpw566_5V6yudctg&s" alt="ดาบพิฆาตอสูร">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iJVZ1kNYaHFGsWONqenpw566_5V6yudctg&s"
+            alt="ดาบพิฆาตอสูร">
           <p>ดาบพิฆาตอสูร ภาคปราสาทไร้ขอบเขต</p>
         </div>
         <div class="movie-card">
-          <img src="https://lh3.googleusercontent.com/211VqRWrDSz306FE5HSNEqwclnePc-WJLMhH2fjDQ4rdzg74oxD_yewIea0GEUMfDPPq6siUSeSroQkeP-slv_cIZfesqNQUEOg=w280" alt="คนเรียกผี">
+          <img
+            src="https://lh3.googleusercontent.com/211VqRWrDSz306FE5HSNEqwclnePc-WJLMhH2fjDQ4rdzg74oxD_yewIea0GEUMfDPPq6siUSeSroQkeP-slv_cIZfesqNQUEOg=w280"
+            alt="คนเรียกผี">
           <p>เดอะ คอนเจอริ่ง พิธีกรรมครั้งสุดท้าย</p>
         </div>
         <div class="movie-card">
-          <img src="https://m.media-amazon.com/images/S/pv-target-images/a3959dae20f5696843b81c8aa6a472a575d778f23163640911854570d3f1e80c.jpg" alt="อภินิหารไวกิ้งพิชิตมังกร">
+          <img
+            src="https://m.media-amazon.com/images/S/pv-target-images/a3959dae20f5696843b81c8aa6a472a575d778f23163640911854570d3f1e80c.jpg"
+            alt="อภินิหารไวกิ้งพิชิตมังกร">
           <p>อภินิหารไวกิ้ง พิชิตมังกร</p>
         </div>
         <div class="movie-card">
-          <img src="https://m.media-amazon.com/images/M/MV5BNTBhNWJjZWItYzY3NS00M2NkLThmOWYtYTlmNzBmN2UxZWFjXkEyXkFqcGc@._V1_.jpg" alt="เวพเพ่นส์">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BNTBhNWJjZWItYzY3NS00M2NkLThmOWYtYTlmNzBmN2UxZWFjXkEyXkFqcGc@._V1_.jpg"
+            alt="เวพเพ่นส์">
           <p>เวพเพ่นส์ (WEAPONS)</p>
         </div>
         <div class="movie-card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7cSnnc0vBwunH2OgZhnIZ7bEg6WPgm_an0g&s" alt="ห่าก้อม">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7cSnnc0vBwunH2OgZhnIZ7bEg6WPgm_an0g&s"
+            alt="ห่าก้อม">
           <p>ห่าก้อม</p>
         </div>
         <div class="movie-card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCBg0TodWtd07Fb-GjhUh7bsGuoNJFATATPQ&s" alt="BAAGHI 4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCBg0TodWtd07Fb-GjhUh7bsGuoNJFATATPQ&s"
+            alt="BAAGHI 4">
           <p>BAAGHI 4 </p>
         </div>
         <div class="movie-card">
-          <img src="https://lh3.googleusercontent.com/13bWzLxuU00m5DZVIp63U5_CnoTFiEXXnbv3Tqod4bJ2JkdVt69vINLNoItjiNetJogZCnsToFHnqdViFJ0vSUvMp48iLmCHPg=s0" alt="ยิ้มไว้ในวันที่โลกไม่สวย">
+          <img
+            src="https://lh3.googleusercontent.com/13bWzLxuU00m5DZVIp63U5_CnoTFiEXXnbv3Tqod4bJ2JkdVt69vINLNoItjiNetJogZCnsToFHnqdViFJ0vSUvMp48iLmCHPg=s0"
+            alt="ยิ้มไว้ในวันที่โลกไม่สวย">
           <p>ยิ้มไว้ในวันที่โลกไม่สวย </p>
         </div>
       </div>
@@ -57,36 +102,22 @@
     <section class="section">
       <h2 style="font-size: 30px;">ระบบฉายภาพยนตร์</h2>
       <div class="format-list">
-  <div class="format-card">
-    <span>IMAX</span>
-    <img src="imax.png" alt="IMAX icon">
-  </div>
-  <div class="format-card">
-    <span>4DX</span>
-    <img src="4dx.png" alt="4DX icon">
-  </div>
-  <div class="format-card">
-    <span>LASER</span>
-    <img src="4dx.png" alt="Laser icon">
-  </div>
-  <!-- เพิ่มตามจำนวนฟอร์แมต -->
-</div>
-
-    <!-- หมวด ส่วนลด Ticket -->
-    <section class="section">
-      <h2 style="font-size: 30px;">ส่วนลด Ticket</h2>
-      <div class="promo-grid">
-        <div class="promo-card">
-          <img src="promo1.png" alt="3BB Reward">
-          <p>ใช้ได้ถึง 31 ธ.ค. 2568</p>
-        </div>
-        <div class="promo-card">
-          <img src="promo2.png" alt="Krungsri Gift">
-          <p>ใช้ได้ถึง 31 ธ.ค. 2568</p>
-        </div>
+        <a href="place.html" class="format-card">
+          <img style="width: auto;" src="images/imax.png" alt="IMAX icon">
+        </a>
+        <a href="place.html" class="format-card">
+          <img style="width: auto;" src="images/4dX.png" alt="4DX icon">
+        </a>
+        <a href="place.html" class="format-card">
+          <img style="width: auto;" src="images/ScreenX.png" alt="ScreenX icon">
+        </a>
+        <a href="place.html" class="format-card">
+          <img style="width: 100px; height: auto;" src="images/laserplex-removebg-preview.png" alt="laserplex icon">
+        </a>
+        <a href="place.html" class="format-card">
+          <img style="width: 100px; height: auto; " src="images/gls-removebg-preview.png" alt="GLS icon">
+        </a>
       </div>
-    </section>
-
   </main>
 
   <!-- Navbar ด้านล่าง -->
@@ -106,4 +137,5 @@
   </nav>
 
 </body>
+
 </html>
