@@ -10,24 +10,32 @@
 </head>
 
 <body>
+<!-- ส่วน Navbar -->
+<nav class="navbar">
+  <!-- โลโก้ + ชื่อเว็บ -->
+  <div class="navbar-left">
+    <img src="images/logo.png" alt="" class="logo">
+    <p class="tagline">CineGo</p>
+  </div>
 
-  <!-- ส่วนโลโก้ -->
-  <header class="header">
-    <img src="images/logo.png" alt="">
-    <p class="tagline"> CineGo </p>
-  </header>
+  <!-- เมนู -->
+  <ul class="navbar-menu">
+    <li><a href="#">หน้าแรก</a></li>
+    <li><a href="#">เกี่ยวกับ</a></li>
+    <li><a href="#">บริการ</a></li>
+    <li><a href="#">ติดต่อ</a></li>
+  </ul>
 
-  <!-- รูปโปรไฟล์ -->
+  <!-- โปรไฟล์ -->
   <div class="profile-menu">
     <img src="images/002.jpg" alt="Profile" class="profile-pic" onclick="toggleMenu()">
-
     <div class="dropdown" id="dropdownMenu">
       <a href="profile.html">โปรไฟล์</a>
       <a href="settings.html">การตั้งค่า</a>
       <a href="#" onclick="logout()">ออกจากระบบ</a>
     </div>
   </div>
-
+</nav>
   <script>
     function toggleMenu() {
       document.getElementById("dropdownMenu").classList.toggle("show");
@@ -119,22 +127,6 @@
         </a>
       </div>
   </main>
-
-  <!-- Navbar ด้านล่าง -->
-  <nav class="navbar">
-    <a href="#movie" class="nav-item">
-      <span class="icon">🎬</span>
-      <span>Movie</span>
-    </a>
-    <a href="#home" class="nav-item">
-      <span class="icon">🏠</span>
-      <span>หน้าแรก</span>
-    </a>
-    <a href="#other" class="nav-item">
-      <span class="icon">☰</span>
-      <span>อื่นๆ</span>
-    </a>
-  </nav>
 
 </body>
 
